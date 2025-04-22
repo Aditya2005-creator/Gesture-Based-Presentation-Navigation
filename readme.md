@@ -1,120 +1,89 @@
-Gesture-Controlled PowerPoint Presentation
-📝 Overview
-A hands-free PowerPoint presentation control system using computer vision and hand gesture recognition. This application allows you to navigate through slides using intuitive hand gestures captured by your webcam.
+# PowerPoint Gesture Control
 
-✨ Features
-Gesture-based navigation:
+A Python-based gesture control system for PowerPoint presentations using hand gestures and webcam input. This application allows you to control your PowerPoint presentations using natural hand gestures, making your presentations more interactive and engaging.
 
-👌 Pinch to start presentation or go to next slide
+## Features
 
-👈 Swipe left for previous slide
+- **Natural Hand Gestures**: Control your presentation using intuitive hand movements
+- **Laser Pointer Mode**: Point to specific areas on your slides
+- **Smooth Gesture Detection**: Advanced gesture recognition with smoothing to prevent accidental triggers
+- **Real-time Feedback**: Visual feedback of detected gestures
+- **Cross-platform Support**: Works on macOS, Windows, and Linux
 
-👉 Swipe right for next slide (alternative to pinch)
+## Gestures
 
-✊ Fist to exit presentation
+1. **Fist Gesture** (👊)
+   - Toggles the laser pointer mode
+   - Uses Command+L keyboard shortcut
 
-Real-time hand tracking visualization
+2. **Pinch Gesture** (🤏)
+   - Toggles fullscreen mode
+   - Uses Command+Enter keyboard shortcut
 
-Visual feedback showing detected gestures
+3. **Swipe Left** (👈)
+   - Goes to the previous slide
+   - Uses Left Arrow key
 
-Debounce system to prevent accidental rapid gestures
+4. **Swipe Right** (👉)
+   - Goes to the next slide
+   - Uses Right Arrow key
 
-Cross-platform (Mac/Windows/Linux)
+5. **Point Gesture** (👆)
+   - Activates laser pointer mode
+   - Move your index finger to point at specific areas
 
-🛠️ Requirements
-Python 3.7+
+## Requirements
 
-Webcam
+- Python 3.7 or higher
+- OpenCV (cv2)
+- MediaPipe
+- NumPy
+- PyAutoGUI
 
-Microsoft PowerPoint (or other presentation software)
+## Usage
 
-Required Python packages:
-
-Copy
-opencv-python
-mediapipe
-pyautogui
-numpy
-🚀 Installation
-Clone this repository or download the script
-
-Install dependencies:
-
-bash
-Copy
-pip install opencv-python mediapipe pyautogui numpy
-🎮 Usage
-Open your PowerPoint presentation
-
-Run the script:
-
-bash
-Copy
+1. Make sure your webcam is connected and working
+2. Open your PowerPoint presentation
+3. Run the gesture control system:
+```bash
 python gesture_control.py
-Perform gestures in view of your webcam:
+```
+4. Position yourself in front of the webcam
+5. Use the gestures to control your presentation
 
-Pinch (thumb and index finger together):
+## Tips for Best Performance
 
-First pinch: Starts presentation (⌘+Enter)
+- Ensure good lighting conditions
+- Keep your hand within the webcam's view
+- Make clear, distinct gestures
+- For fist gesture, curl all fingers into your palm
+- For swipe gestures, move your hand horizontally with fingers extended
+- For pinch gesture, bring thumb and index finger close together
 
-Subsequent pinches: Next slide (→)
+## Troubleshooting
 
-Swipe left (two fingers to left): Previous slide (←)
+- If gestures aren't being detected:
+  - Check webcam permissions
+  - Ensure proper lighting
+  - Adjust your distance from the webcam
+  - Make more distinct gestures
 
-Swipe right (two fingers to right): Next slide (→)
+- If laser pointer isn't working:
+  - Ensure PowerPoint is in focus
+  - Check if Command+L shortcut is enabled in PowerPoint
+  - Try toggling the laser pointer mode again
 
-Fist (closed hand): Exit presentation (Esc)
+## Contributing
 
-Press 'q' to quit the application
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-⚙️ Configuration
-You can adjust these parameters in the code for better performance:
+## License
 
-gesture_delay: Time between gesture actions (seconds)
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-PINCH_THRESHOLD: Sensitivity for pinch detection
+## Acknowledgments
 
-SWIPE_THRESHOLD_X/Y: Sensitivity for swipe detection
-
-🖥️ System Architecture
-mermaid
-Copy
-graph TD
-    A[Webcam Input] --> B[Hand Detection]
-    B --> C[Gesture Recognition]
-    C --> D[PowerPoint Control]
-    D --> E[Visual Feedback]
-📊 Gesture Detection Logic
-Pinch Detection: Measures distance between thumb and index finger tips
-
-Swipe Detection: Tracks finger positions relative to wrist
-
-Fist Detection: Checks finger curl positions
-
-Priority System: Pinch > Swipe > Fist
-
-🛑 Known Limitations
-Requires good lighting conditions
-
-Works best with one hand in frame
-
-May need calibration for different hand sizes
-
-PowerPoint must be the active window
-
-🤝 Contributing
-Contributions are welcome! Please open an issue or pull request for any:
-
-Bug fixes
-
-New gesture implementations
-
-Performance improvements
-
-Additional features
-
-📜 License
-MIT License - Free for personal and educational use
-
-💡 Tip: For best results, position your hand clearly in the webcam view and make deliberate gestures. The system includes a 1-second cooldown between gestures to prevent accidental activations.
+- MediaPipe for hand tracking capabilities
+- OpenCV for computer vision support
+- PyAutoGUI for system control
 
